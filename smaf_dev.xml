@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<remote name="busybox" fetch="git://busybox.net" />
+	<remote name="linaro-swg" fetch="https://github.com/linaro-swg" />
+	<remote name="linux" fetch="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds" />
+	<remote name="optee" fetch="https://github.com/OP-TEE" />
+	<remote name="qemu" fetch="https://github.com/qemu" />
+	<remote name="etienne" fetch="https://github.com/etienne-lms" />
+
+<default remote="optee" revision="master"/>
+
+	<!-- OP-TEE gits -->
+	<project remote="etienne" path="optee_client" name="optee_client.git" revision="smaf/memref" />
+	<project remote="etienne" path="optee_os" name="optee_os.git" revision="smaf/memref" />
+	<project remote="optee" path="optee_test" name="optee_test.git" revision="327672cda23a15b5aa743177f839099c003d9482" />
+
+	<!-- busybox -->
+	<project remote="busybox" path="busybox" name="busybox.git" revision="dbf5a6da6a4295ce26edd1ce34fde567d19afa02" />
+
+	<!-- Linux kernel -->
+	<project remote="etienne" path="linux" name="linux.git" revision="smaf/memref/optee_v11" />
+
+	<!-- linaro-swg gits -->
+	<project remote="linaro-swg" path="gen_rootfs" name="gen_rootfs.git" revision="44a44ba7b35e25d576bef9b367e16f471c24be65" upstream="master" />
+	<project remote="linaro-swg" path="soc_term" name="soc_term.git" revision="7f2da75e9f106bc3e7ed81dd0ff541a49e04dd8c" upstream="master" />
+	<project remote="etienne" path="bios_qemu_tz_arm" name="bios_qemu_tz_arm.git" revision="smaf" />
+	<project remote="linaro-swg" path="hello_world" name="hello_world.git" />
+
+	<project remote="qemu" path="qemu" name="qemu.git" revision="de1d099a448beb2ec39af4bd9ce4dd6452a18cb5" upstream="master" />
+
+	<!-- Build -->
+	<project remote="etienne" path="build" name="build.git" revision="smaf" >
+		<linkfile src="qemu.mk" dest="build/Makefile" />
+	</project>
+
+	<!-- SMAF components -->
+	<project name="libsmaf-fork.git" path="libsmaf" remote="etienne" revision="smaf/memref" />
+	<project name="optee-sdp-fork.git" path="optee_smaf" remote="etienne" revision="memref_secure" />
+
+</manifest>
