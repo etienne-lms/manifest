@@ -8,20 +8,19 @@
 
         <!-- OP-TEE gits -->
         <project path="optee_client"        name="OP-TEE/optee_client.git" revision="refs/tags/3.10.0" clone-depth="1" />
-        <project path="optee_docs"          name="OP-TEE/optee_docs.git" revision="refs/tags/3.10.0" clone-depth="1" />
-        <project path="optee_os"            name="OP-TEE/optee_os.git" revision="refs/tags/3.10.0" clone-depth="1" />
+        <project path="optee_os"            name="etienne-lms/optee_os.git"  revision="b7612c8948a1545b01506c275422fa81489d3784" />
         <project path="optee_test"          name="OP-TEE/optee_test.git" revision="refs/tags/3.10.0" clone-depth="1" />
-        <project path="build"               name="OP-TEE/build.git" revision="refs/tags/3.10.0" clone-depth="1" >
+        <project path="build"               name="etienne-lms/build.git" revision="fa79e7696a424cf19b42e2f6aad8fa913953b4e6" >
                 <linkfile src="stm32mp1.mk" dest="build/Makefile" />
         </project>
 
         <!-- linaro-swg gits -->
-	<project path="linux"                name="linaro-swg/linux.git" revision="refs/tags/optee-3.10.0" clone-depth="1" />
+        <project path="linux"                name="etienne-lms/linux.git" revision="6790f5a2f5ee57364a150940379d141bec6b2515" clone-depth="23" />
         <project path="optee_benchmark"      name="linaro-swg/optee_benchmark.git" revision="refs/tags/3.10.0" clone-depth="1" />
         <project path="optee_examples"       name="linaro-swg/optee_examples.git" revision="refs/tags/3.10.0" clone-depth="1" />
 
         <!-- Misc gits -->
         <project path="buildroot"            name="buildroot/buildroot.git" revision="refs/tags/2020.02" clone-depth="1" />
         <project path="trusted-firmware-a"   name="TF-A/trusted-firmware-a.git" revision="refs/tags/v2.3" remote="tfo" clone-depth="1" />
-        <project path="u-boot"               name="u-boot.git" revision="refs/tags/v2020.04" remote="u-boot" clone-depth="1" />
+        <project path="u-boot"               name="etienne-lms/u-boot.git" revision="5f9342e01036781501dad2f67693977b73b201ed" clone-depth="27" />
 </manifest>
