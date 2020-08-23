@@ -8,14 +8,14 @@
 
         <!-- OP-TEE gits -->
         <project path="optee_client"         name="OP-TEE/optee_client.git" revision="refs/tags/3.10.0" clone-depth="1" />
-        <project path="optee_os"             name="OP-TEE/optee_os.git" revision="refs/tags/3.10.0" clone-depth="1" />
+        <project path="optee_os"            name="etienne-lms/optee_os.git"  revision="b7612c8948a1545b01506c275422fa81489d3784" />
         <project path="optee_test"           name="OP-TEE/optee_test.git" revision="refs/tags/3.10.0" clone-depth="1" />
-        <project path="build"                name="OP-TEE/build.git" revision="refs/tags/3.10.0" clone-depth="1">
+        <project path="build"                name="OP-TEE/build.git" revision="refs/tags/3.10.0" >
                 <linkfile src="fvp.mk" dest="build/Makefile" />
         </project>
 
         <!-- linaro-swg gits -->
-	<project path="linux"                name="linaro-swg/linux.git"                  revision="refs/tags/optee-3.10.0" clone-depth="1" />
+        <project path="linux"                name="etienne-lms/linux.git" revision="6790f5a2f5ee57364a150940379d141bec6b2515" clone-depth="23" />
         <project path="optee_examples"       name="linaro-swg/optee_examples.git" revision="refs/tags/3.10.0" clone-depth="1" />
 
         <!-- Misc gits -->
