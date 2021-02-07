@@ -2,6 +2,7 @@
 <manifest>
         <remote name="github" fetch="https://github.com" />
         <remote name="tfo"    fetch="https://git.trustedfirmware.org" />
+        <remote name="tianocore" fetch="https://github.com/tianocore" />
         <remote name="u-boot" fetch="https://gitlab.denx.de/u-boot" />
 
         <default remote="github" revision="master" />
@@ -10,7 +11,7 @@
         <project path="optee_client"        name="OP-TEE/optee_client.git" />
         <project path="optee_os"            name="OP-TEE/optee_os.git" />
         <project path="optee_test"          name="OP-TEE/optee_test.git" />
-        <project path="build"               name="OP-TEE/build.git">
+        <project path="build"               name="etienne-lms/build.git"                  revision="stmm-arm-32b" >
                 <linkfile src="qemu.mk" dest="build/Makefile" />
         </project>
 
@@ -23,6 +24,12 @@
         <!-- Misc gits -->
         <project path="buildroot"            name="buildroot/buildroot.git"               revision="refs/tags/2020.08" clone-depth="1" />
         <project path="qemu"                 name="qemu/qemu.git"                         revision="refs/tags/v5.1.0" clone-depth="1" />
+        <!-- U-Boot is patched: RPMB emulation + defconfig for EFI/OP-TEE qemu boards -->
+        <project path="u-boot"               name="etienne-lms/u-boot.git"                revision="stmm-arm-32b-v2021.01" clone-depth="3" />
         <project path="trusted-firmware-a"   name="TF-A/trusted-firmware-a.git"           revision="refs/tags/v2.3" remote="tfo" />
-        <project path="u-boot"               name="u-boot.git"                            revision="refs/tags/v2020.04" remote="u-boot" clone-depth="1" />
+
+        <!-- EDK2 for StandaloneMM. Should be from tianocore/edk2.git, patches under review) -->
+        <!-- Note: edk2 needs submodules inits -->
+        <project path="edk2"                 name="etienne-lms/edk2"                      revision="stmm-arm-32b"  clone-depth="30" />
+        <project path="edk2-platforms"       name="etienne-lms/edk2-platforms"            revision="stmm-arm-32b"  clone-depth="30" />
 </manifest>
